@@ -8,3 +8,18 @@
 <%= @post.description %>
 </p>
 <hr/>
+
+<h5>Create a Comment:</h5>
+<%= form_for [@post, @comment] do |f| %>
+	<%= f.text_area :body %>
+	<br>
+	<%= f.submit 'Create Comment', class: "btn btn-primary" %>
+<% end %>
+
+<% @comments.each do |comment| %>
+	<div class="row">
+		<div class="span8 well">
+			<p><%= comment.body %></p>
+		</div>
+	</div>		
+<% end %>
