@@ -1,0 +1,23 @@
+<% if @post.errors.any? %>
+	<div class="alert alert-error">
+		<h5><%= @post.errors.count %> errors prevented this Post from being saved:</h5>
+		<ul >
+			<% @post.errors.full_messages.each do |error| %>
+				<li><%= error %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<%= form_for @post  do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :description %>
+	<%= f.text_field :description %>
+
+	<%= f.label :url %>
+	<%= f.text_field :url %><br>
+
+	<%= f.submit class: "btn btn-primary" %>
+<% end %>
