@@ -3,8 +3,8 @@
 	<div class="alert alert-error">
 		<h5><%= @post.errors.count %> errors prevented this Post from being saved:</h5>
 		<ul >
-			<% @post.errors.full_messages.each do |error| %>
-				<li><%= error %></li>
+			<% @post.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
 			<% end %>
 		</ul>
 	</div>
