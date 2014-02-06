@@ -3,12 +3,14 @@ class CommentsController < ApplicationController
 
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.build(params.require(:comment).permit(:body))
+		@comment.creator = User.last
 		
 		if @comment.save
 			flash[:notice] = "Your comment was added."
+			redirect_to post_path(@post)
 		else
-			flash[:alert] = "Your comment was not saved."
+			@comments = @post.comments
+			render 'posts/show'
 		end
-		redirect_to post_path(@post)
 	end
 end
