@@ -1,0 +1,21 @@
+<% if @category.errors.any? %>
+	<div class="alert alert-error">
+		<h5><%= @category.errors.count %> errors prevented this Category from being saved:</h5>
+		<ul >
+			<% @category.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<div class="well">
+	<%= form_for @category  do |f| %>
+		<div class="control-group">
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</div>
+
+		<%= f.submit class: "btn btn-primary" %>
+	<% end %>
+</div>
