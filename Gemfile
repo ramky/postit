@@ -10,6 +10,7 @@ gem 'rails_12factor'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'hirb'
 
 group :doc do
   gem 'sdoc', require: false
@@ -18,5 +19,4 @@ end
 group :development do
   gem 'quiet_assets'
   gem 'pry'
-  gem 'hirb'
 end
