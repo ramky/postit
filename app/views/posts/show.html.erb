@@ -2,11 +2,9 @@
 	<%= render @post.categories %>
 </p>
 
-<%= render 'shared/content_title', title: @post.title %>
+<%= render 'shared/content_title', title: link_to(@post.title,fix_url(@post.url)) %>
 
-<p>
-<%= @post.description %>
-</p>
+<p><%= @post.description %></p>
 <hr/>
 
 <h5>Create a Comment:</h5>
