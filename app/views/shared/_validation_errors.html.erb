@@ -1,6 +1,6 @@
 <% if instance.errors.any? %>
 	<div class="alert alert-error">
-		<h5><%= instance.errors.count %> errors prevented <%= model_name(instance) %> from being saved:</h5>
+		<h5><%= error_text(instance) %> prevented <%= model_name(instance) %> from being saved:</h5>
 		<ul >
 			<% instance.errors.full_messages.each do |msg| %>
 				<li><%= msg %></li>
