@@ -21,7 +21,7 @@
 			<p><%= comment.body %></p>
 			<p>
 	  		<span class="quiet">posted by</span> <%= comment.creator.username %>
-	  		<small>at <%= comment.created_at %></small>
+	  		<small>at <%= display_datetime(comment.created_at) %></small>
 	  	</p>
 		</div>
 	</div>		
