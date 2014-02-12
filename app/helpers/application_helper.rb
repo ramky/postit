@@ -1,13 +1,11 @@
 module ApplicationHelper
-	def model_name(instance)
-		instance.class.to_s
-	end
-
 	def error_text(instance)
+		model = instance.class.to_s
+
 		if instance.errors.count == 1
-			"1 error"
+			"1 error prevented #{model}"
 		else
-			"#{instance.errors.count} errors"
+			"#{instance.errors.count} errors prevented #{model}"
 		end
 	end
 end
