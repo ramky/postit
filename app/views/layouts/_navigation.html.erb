@@ -19,5 +19,16 @@
 	</ul>
 </div>
 <div class="nav_item">
-	<%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
+	<%= link_to 'New Post', new_post_path, class: 'btn btn-small' %>
 </div>
+<% if logged_in? %>
+	<p>Welcome <%= current_user.username %></p>
+	<div class="nav_item">
+		<%= link_to 'Log out', logout_path, class: 'btn btn-small' %>
+	</div>
+<% else %>	
+	<div class="nav_item">
+		<%= link_to 'Register', register_path, class: 'btn btn-small' %>
+		<%= link_to 'Log in', login_path, class: 'btn btn-small' %>
+	</div>
+<% end %>
