@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
   	unless logged_in?
-  		flash[:error] = "You must be logged in to complete that action"
+  		flash[:error] = "You must be logged in to complete that action."
   		redirect_to root_path
   	end
   end

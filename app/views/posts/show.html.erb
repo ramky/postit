@@ -16,13 +16,5 @@
 <% end %>
 
 <% @comments.each do |comment| %>
-	<div class="row">
-		<div class="span8 well">
-			<p><%= comment.body %></p>
-			<p>
-	  		<span class="quiet">posted by</span> <%= comment.creator.username %>
-	  		<small>at <%= display_datetime(comment.created_at) %></small>
-	  	</p>
-		</div>
-	</div>		
+	<%= render 'comments/comment', comment: comment %>	
 <% end %>
