@@ -1,16 +1,25 @@
 <div class="row">
-	  <div class="span8 well">
-	  	<p><%= render post.categories %></p>
-	  	<h4><%= link_to post.title, edit_post_path(post) %></h4>
-	  	<p><%= post.description %></p>
-	  	<p>
-	  		<span class="quiet">posted by</span> <%= link_to post.creator.username, user_path(post.creator) %>
-	  		<small>at <%= display_datetime(post.created_at) %></small>
-	  	</p>
-	  	<small>
-	  		<span>
-	  			<%= link_to("#{post.comments.size} comments", post_path(post)) %>
-	  		</span>
-	  	</small>
-	  </div>
+	<div class='span0 well text-center'>
+		<%= link_to vote_post_path(post), method: :post do %>
+			<i class="icon-arrow-up"></i>
+		<% end %>	
+		<%= link_to vote_post_path(post) do %>
+			<br>
+			<i class="icon-arrow-down"></i>
+		<% end %>
+	</div>
+  <div class="span8 well">
+  	<p><%= render post.categories %></p>
+  	<h4><%= link_to post.title, edit_post_path(post) %></h4>
+  	<p><%= post.description %></p>
+  	<p>
+  		<span class="quiet">posted by</span> <%= link_to post.creator.username, user_path(post.creator) %>
+  		<small>at <%= display_datetime(post.created_at) %></small>
+  	</p>
+  	<small>
+  		<span>
+  			<%= link_to("#{post.comments.size} comments", post_path(post)) %>
+  		</span>
+  	</small>
+  </div>
 </div>

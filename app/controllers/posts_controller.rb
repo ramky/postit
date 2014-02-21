@@ -38,6 +38,9 @@ class PostsController < ApplicationController
     end
   end
 
+  def vote
+  end
+
 private
   def set_post
     @post = Post.find(params[:id])
