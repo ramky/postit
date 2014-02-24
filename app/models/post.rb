@@ -11,7 +11,8 @@ class Post < ActiveRecord::Base
 
 
 	def total_votes
-		(up_votes - down_votes).to_s + ' Votes' 
+		votes = up_votes - down_votes
+		votes.to_s + ( [-1,0,1].include?(votes) ? ' Vote' : ' Votes' )
 	end
 
 	def up_votes

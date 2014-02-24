@@ -1,5 +1,20 @@
 	<% show_post ||= false %>
 	<div class="row">
+		<div class='span0 well text-center'>
+	    <% if logged_in? %>
+	  		<%= link_to vote_post_comment_path(comment.post, comment, vote: :true), method: :post do %>
+	  			<i class="icon-arrow-up"></i>
+	  		<% end %>	
+	    <% end %>  
+	      <br>
+	      <%= comment.total_votes %>
+	      <br>
+	    <% if logged_in? %>      
+	  		<%= link_to vote_post_comment_path(comment.post, comment, vote: :false), method: :post do %>
+	  			<i class="icon-arrow-down"></i>
+	  		<% end %>
+	    <% end %>
+	</div>
 		<div class="span8 well">
 			<p><%= comment.body %></p>
 			<% if show_post %>
