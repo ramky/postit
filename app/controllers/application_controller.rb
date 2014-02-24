@@ -18,4 +18,13 @@ class ApplicationController < ActionController::Base
   		redirect_to root_path
   	end
   end
+
+  def require_admin
+    access_denied unless logged_in ? && current_user.admin?
+  end
+
+  def access_denied
+    flash[:error] = "Only an administrator can complete that action."
+    redirect_to root_path    
+  end
 end

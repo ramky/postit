@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
 	def to_param
 		self.username
 	end
+
+	def admin?
+		self.role == 'admin'
+	end
 end
