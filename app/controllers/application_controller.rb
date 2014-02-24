@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_admin
-    access_denied unless logged_in ? && current_user.admin?
+    access_denied unless logged_in? && current_user.admin?
   end
 
   def access_denied
