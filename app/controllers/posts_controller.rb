@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = Post.find(params[:id]).comments.order(created_at: :desc)
+    @comments = Post.find_by(slug: params[:id]).comments.order(created_at: :desc)
   end
 
   def new
@@ -56,7 +56,7 @@ class PostsController < ApplicationController
 
 private
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.find_by(slug: params[:id])
   end
 
   def post_params
