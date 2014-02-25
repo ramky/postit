@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
   def update
     if @category.update(category_params)
       flash[:notice] = "Your category was updated."
-      redirect_to categories_path      
+      redirect_to root_path      
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class CategoriesController < ApplicationController
 
 private
   def set_category
-    @category = Category.find(params[:id])
+    @category = Category.find_by(slug: params[:id])
   end
 
 	def category_params

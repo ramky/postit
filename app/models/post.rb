@@ -11,7 +11,6 @@ class Post < ActiveRecord::Base
 
 	before_save :generate_slug
 
-
 	def total_votes
 		votes = up_votes - down_votes
 		votes.to_s + ( [-1,0,1].include?(votes) ? ' Vote' : ' Votes' )
