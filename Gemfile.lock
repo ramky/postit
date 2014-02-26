@@ -100,6 +100,7 @@ GEM
       json (>= 1.1.3)
       rdoc (~> 3.10)
     slop (3.4.5)
+    sluggable_ramky (0.0.0)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -141,6 +142,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 4.0.0)
   sdoc
+  sluggable_ramky
   turbolinks
   uglifier (>= 1.3.0)
   voteable_ramky
