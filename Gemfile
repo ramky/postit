@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'hirb'
 gem 'bcrypt-ruby', '3.0.1'
+gem 'voteable_ramky'
 
 group :doc do
   gem 'sdoc', require: false
