@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :vote]
   before_action :require_user, except: [:index]
+  before_action :require_creator, only: [:edit, :update]
 
   def index
   	@posts = Post.all.sort_by{|x| x.total_votes}.reverse
@@ -62,4 +63,8 @@ private
   def post_params
     params.require(:post).permit(:title, :url, :description, category_ids: [])
   end 
+
+  def require_creator
+    access_denied("Only the creator can edit or update the post.") if logged_in?  and (current_user != @post.creator || current_user.admin?)
+  end
 end
