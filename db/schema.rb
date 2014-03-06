@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306174811) do
+ActiveRecord::Schema.define(version: 20140306210214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20140306174811) do
     t.string   "role"
     t.string   "timezone"
     t.string   "slug"
+    t.string   "pin"
+    t.string   "phone"
   end
 
   create_table "votes", force: true do |t|

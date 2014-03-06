@@ -13,6 +13,13 @@
 				<%= f.label :timezone %>
 				<%= f.time_zone_select :timezone, ActiveSupport::TimeZone.us_zones %>
 		</div>
+		<div class='control-group'>
+			<%= f.label :phone, "Phone Number <small>(numbers only)</small".html_safe %><br>
+			<%= f.text_field :phone %>
+			<%= link_to '#', id: 'two_factor_phone' do %>
+				<i class='icon-question-sign'></i>
+			<% end %>
+		</div>	
 
 		<%= f.submit @user.new_record? ? 'Register' : 'Update Profile', class: 'btn btn-success' %>	
 	<% end %>
