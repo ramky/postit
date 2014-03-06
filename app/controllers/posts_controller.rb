@@ -65,6 +65,6 @@ private
   end 
 
   def require_creator
-    access_denied("Only the creator can edit or update the post.") if logged_in?  and (current_user != @post.creator || current_user.admin?)
+    access_denied("Only the creator can edit or update the post.") if logged_in?  and (current_user != @post.creator || !current_user.admin?)
   end
 end

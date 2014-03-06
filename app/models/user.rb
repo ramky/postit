@@ -11,10 +11,6 @@ class User < ActiveRecord::Base
 
 	sluggable_column :username
 
-	def to_param
-		self.username
-	end
-
 	def admin?
 		self.role == 'admin'
 	end
